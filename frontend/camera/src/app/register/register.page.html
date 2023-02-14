@@ -1,0 +1,64 @@
+<ion-content class="card">
+  <ion-card>
+    
+    <ion-card-header>
+      <!-- <ion-avatar >
+        <img alt="Silhouette of a person's head" src="https://ionicframework.com/docs/img/demos/avatar.svg" />
+      </ion-avatar> -->
+      <ion-card-title color="success"  ><h1>SignUp</h1></ion-card-title> 
+      
+    </ion-card-header>
+  
+    <ion-card-content >
+      <ion-item>
+        <ion-icon name="person-add" slot="start"></ion-icon>
+        <ion-label position="floating">User name</ion-label>
+        <ion-input type="text"  [(ngModel)]="username"  ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="mail" slot="start"></ion-icon>
+        <ion-label position="floating">Email</ion-label>
+        <ion-input type="email" [(ngModel)]="email" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="key" slot="start"></ion-icon>
+        <ion-label position="floating">Password</ion-label>
+        <ion-input type="password" [(ngModel)]="password" required></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-icon name="key" slot="start"></ion-icon>
+        <ion-label position="floating">Confirm password</ion-label>
+        <ion-input type="password" [(ngModel)]="confirmpassword" required ></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon name="person-add" slot="start"></ion-icon>
+        <!-- <ion-label position="floating">Gender</ion-label> -->
+        <ion-select interface="popover" placeholder="Gender" [(ngModel)]="gender">
+          <ion-select-option value="MALE">Male</ion-select-option>
+          <ion-select-option value="FEMALE">Female</ion-select-option>
+          <ion-select-option value="OTHERS">Others</ion-select-option>
+        </ion-select>
+        <!-- <ion-input type="text"  [(ngModel)]="gender"  ></ion-input> -->
+      </ion-item>
+      <ion-item>
+        <ion-icon name="call" slot="start"></ion-icon>
+        <ion-label position="floating">Phone number</ion-label>
+        <ion-input type="number"  [(ngModel)]="mobilenumber"  ></ion-input>
+      </ion-item>
+      
+
+
+      <ion-item>
+        <ion-checkbox slot="start" (ionChange)="checkboxClick($event)"></ion-checkbox>
+        <ion-label fill="clear"><p>I accept the <a>Terms of use</a>&<a>Policy</a></p></ion-label>
+      </ion-item>
+
+      <ion-button [disabled]="!isEnabled" color="success" size="full" (click)="doRegister()" >SignUp</ion-button>
+
+      <strong >Already have an accout?<a [routerLink]="['/login']">login</a></strong>
+      </ion-card-content>
+      </ion-card>
+
+</ion-content>
+
